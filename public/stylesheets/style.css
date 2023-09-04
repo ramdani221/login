@@ -379,7 +379,7 @@ tbody tr:nth-child(odd) {
   height: 100px;
   padding: 10px 20px;
   position: relative;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #cfc4c4;
 }
 
 .profil img {
