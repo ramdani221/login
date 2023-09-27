@@ -22,7 +22,7 @@ module.exports = function (db) {
     if (title) {
       params.push(title);
       paramscount.push(title);
-      queries.push(`title like '%' || $${params.length} || '%'`);
+      queries.push(`title ilike '%' || $${params.length} || '%'`);
     };
 
     if (strDate && endDate) {
@@ -90,7 +90,7 @@ module.exports = function (db) {
     db.query('SELECT * FROM todos WHERE id = $1', [index], (err, { rows: data }) => {
 
       if (err) res.send(err)
-      else res.render('user/sedit', { data, moment })
+      else res.render('user/edit', { data, moment })
     })
   })
 

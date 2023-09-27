@@ -127,7 +127,7 @@
                                 <%= moment(value.deadline).format('DD MMM YYYY, h:mm')%>
                             </td>
                             <td>
-                                <a class="update" href="/users/edit/<%= value.id %>"><i class="fa-sharp fa-solid fa-pencil"></i></a>&nbsp<a class="delete" href="/users/delete/<%= value.id %>" onclick="return confirmation('<%= value.name %>')"><i class="fa-solid fa-trash"></i></a>
+                                <a class="update" href="/users/edit/<%= value.id %>"><i class="fa-sharp fa-solid fa-pencil"></i></a>&nbsp<a class="delete" href="/users/delete/<%= value.id %>" onclick="return confirmation('<%= value.title %>')"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>    
                     <% }) %>
