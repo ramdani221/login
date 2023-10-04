@@ -112,8 +112,9 @@ module.exports = function (db) {
     })
   })
 
-  router.get('/upload', isLoggedIn, function (req, res) {
-    res.render('user/upload', { prevAvatar: req.session.user.avatar })
+  router.get('/upload', isLoggedIn, async function (req, res) {
+    const { rows: profil } = await db.query('SELECT * FROM "user" WHERE id = $1', [req.session.user.userid]);
+    res.render('user/upload', { prevAvatar: profil[0].avatar })
   })
 
   router.post('/upload', isLoggedIn, async function (req, res) {
